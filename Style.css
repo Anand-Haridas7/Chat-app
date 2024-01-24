@@ -14,26 +14,29 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-    color: #ff0000; /* Red text color */
-}
-
-button {
+#header-bar {
+    background-color: #3399ff; /* Blue header bar */
     padding: 10px;
-    margin-top: 20px;
-    cursor: pointer;
-    background-color: #ff0000; /* Red button background */
-    color: #ffffff; /* White button text color */
-    border: none;
-    border-radius: 5px;
-    transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    margin-bottom: 20px;
 }
 
-button:hover {
-    background-color: #990000; /* Darker red on hover */
+#question-number {
+    color: #ffffff; /* White font color for question number */
 }
 
-/* Styling for quiz options */
+#question-field {
+    background-color: #b3b3b3; /* Oval-shaped field color */
+    padding: 20px;
+    border-radius: 50%;
+    margin-bottom: 20px;
+}
+
+#question {
+    margin: 0;
+}
+
 #options-container {
     display: flex;
     flex-direction: column;
@@ -41,23 +44,32 @@ button:hover {
     gap: 10px;
 }
 
-button.option-btn {
-    width: 80%; /* Adjust the width as needed */
+.button-container {
+    display: flex;
+    justify-content: space-between;
 }
 
-/* Styling for the score board */
-#result-container {
-    margin-top: 20px;
-    font-size: 1.2em; /* Adjust the font size as needed */
+.button-container button {
+    padding: 10px;
+    width: 48%; /* Adjust width as needed */
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-/* Responsive styling */
-@media (max-width: 600px) {
-    #quiz-container {
-        padding: 10px;
-    }
+#back-btn {
+    background-color: #3399ff; /* Blue BACK button */
+    color: #ffffff; /* White font color */
+}
 
-    button.option-btn {
-        width: 100%;
-    }
+#next-btn {
+    background-color: #00cc66; /* Green NEXT button */
+    color: #ffffff; /* White font color */
+}
+
+button:hover {
+    background-color: #005580; /* Darker blue on hover for BACK button */
+}
+
+#next-btn:hover {
+    background-color: #008040; /* Darker green on hover for NEXT button */
 }
