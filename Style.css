@@ -26,9 +26,32 @@ button {
     color: #ffffff; /* White button text color */
     border: none;
     border-radius: 5px;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
 }
 
 button:hover {
     background-color: #990000; /* Darker red on hover */
 }
 
+/* Styling for quiz options */
+#options-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+button.option-btn {
+    width: 80%; /* Adjust the width as needed */
+}
+
+/* Responsive styling */
+@media (max-width: 600px) {
+    #quiz-container {
+        padding: 10px;
+    }
+
+    button.option-btn {
+        width: 100%;
+    }
+}
