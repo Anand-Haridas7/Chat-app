@@ -8,21 +8,9 @@
 </head>
 <body>
     <div id="quiz-container">
-        <div id="header-bar">
-            <h1 id="question-number">QUESTION XX</h1>
-        </div>
-        <div id="question-field" class="oval-field">
-            <h2 id="question"></h2>
-        </div>
-        <div id="options-container">
-            <button class="option-btn" onclick="checkAnswer('0')"><span class="option-label">OPTION 01</span></button>
-            <button class="option-btn" onclick="checkAnswer('1')"><span class="option-label">OPTION 02</span></button>
-            <button class="option-btn" onclick="checkAnswer('2')"><span class="option-label">OPTION 03</span></button>
-        </div>
-        <div id="nav-buttons">
-            <button id="back-btn" onclick="loadPreviousQuestion()">BACK</button>
-            <button id="next-btn" onclick="loadNextQuestion()">NEXT</button>
-        </div>
+        <h1 id="question"></h1>
+        <div id="options-container"></div>
+        <button id="next-btn">Next</button>
     </div>
 
     <script src="quiz.js"></script>
