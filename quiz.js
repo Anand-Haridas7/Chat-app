@@ -96,16 +96,21 @@ function loadQuestion() {
 
 
 function checkAnswer(selectedIndex) {
+    const currentQuestion = quizData[currentQuestionIndex];
+
     // Implement answer checking logic if needed
 
-    // Move to the next question
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizData.length) {
-        loadQuestion();
-    } else {
-        showResult();
+    // Move to the next question only if an option is selected
+    if (typeof selectedIndex === 'number') {
+        currentQuestionIndex++;
+        if (currentQuestionIndex < quizData.length) {
+            loadQuestion();
+        } else {
+            showResult();
+        }
     }
 }
+
 
 
 
