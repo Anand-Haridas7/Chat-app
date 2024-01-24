@@ -64,9 +64,6 @@ const quizData = [
 
     // Add more questions as needed
 
-const quizData = [
-    // Your quiz questions here
-];
 
 const quizContainer = document.getElementById('quiz-container');
 const questionNumberElement = document.getElementById('question-number');
