@@ -45,6 +45,12 @@ button.option-btn {
     width: 80%; /* Adjust the width as needed */
 }
 
+/* Styling for the score board */
+#result-container {
+    margin-top: 20px;
+    font-size: 1.2em; /* Adjust the font size as needed */
+}
+
 /* Responsive styling */
 @media (max-width: 600px) {
     #quiz-container {
