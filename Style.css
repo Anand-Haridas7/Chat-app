@@ -2,7 +2,7 @@ body {
     font-family: 'Arial', sans-serif;
     text-align: center;
     margin: 50px;
-    background-color: #f2f2f2; /* Light grey background */
+    background-color: #ffcccc; /* Light red background */
 }
 
 #quiz-container {
@@ -14,29 +14,26 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-#header-bar {
-    background-color: #3399ff; /* Blue header bar */
+h1 {
+    color: #ff0000; /* Red text color */
+}
+
+button {
     padding: 10px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
-    margin-bottom: 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    background-color: #ff0000; /* Red button background */
+    color: #ffffff; /* White button text color */
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out; /* Smooth transition on hover */
 }
 
-#question-number {
-    color: #ffffff; /* White font color for question number */
+button:hover {
+    background-color: #990000; /* Darker red on hover */
 }
 
-#question-field {
-    background-color: #b3b3b3; /* Oval-shaped field color */
-    padding: 20px;
-    border-radius: 50%;
-    margin-bottom: 20px;
-}
-
-#question {
-    margin: 0;
-}
-
+/* Styling for quiz options */
 #options-container {
     display: flex;
     flex-direction: column;
@@ -44,42 +41,17 @@ body {
     gap: 10px;
 }
 
-.option-box {
-    background-color: #ffffff; /* White box background */
-    color: #000000; /* Black text color */
-    border: 2px solid #000000; /* Black border */
-    padding: 10px;
-    border-radius: 10px;
+button.option-btn {
     width: 80%; /* Adjust the width as needed */
-    text-transform: uppercase; /* Capitalize text */
 }
 
-.button-container {
-    display: flex;
-    justify-content: space-between;
-}
+/* Responsive styling */
+@media (max-width: 600px) {
+    #quiz-container {
+        padding: 10px;
+    }
 
-.button-container button {
-    padding: 10px;
-    width: 48%; /* Adjust width as needed */
-    border-radius: 5px;
-    cursor: pointer;
-}
-
-#back-btn {
-    background-color: #3399ff; /* Blue BACK button */
-    color: #ffffff; /* White font color */
-}
-
-#next-btn {
-    background-color: #00cc66; /* Green NEXT button */
-    color: #ffffff; /* White font color */
-}
-
-button:hover {
-    background-color: #005580; /* Darker blue on hover for BACK button */
-}
-
-#next-btn:hover {
-    background-color: #008040; /* Darker green on hover for NEXT button */
+    button.option-btn {
+        width: 100%;
+    }
 }
