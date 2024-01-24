@@ -64,33 +64,45 @@ const quizData = [
 
     // Add more questions as needed
 
+const quizData = [
+    // Your quiz questions here
+];
+
 const quizContainer = document.getElementById('quiz-container');
+const questionNumberElement = document.getElementById('question-number');
+const questionField = document.getElementById('question-field');
 const questionElement = document.getElementById('question');
 const optionsContainer = document.getElementById('options-container');
+const backButton = document.getElementById('back-btn');
 const nextButton = document.getElementById('next-btn');
 
 let currentQuestionIndex = 0;
-let score = 0;
 
 function loadQuestion() {
     const currentQuestion = quizData[currentQuestionIndex];
+    
+    questionNumberElement.innerText = `QUESTION ${currentQuestionIndex + 1}`;
     questionElement.innerText = currentQuestion.question;
 
     optionsContainer.innerHTML = '';
     currentQuestion.options.forEach((option, index) => {
         const optionButton = document.createElement('button');
+        optionButton.className = 'option-btn';
         optionButton.innerText = option;
-        optionButton.addEventListener('click', () => checkAnswer(option));
+        optionButton.addEventListener('click', () => checkAnswer(index));
         optionsContainer.appendChild(optionButton);
     });
+
+    // Hide back button on the first question
+    backButton.style.display = currentQuestionIndex === 0 ? 'none' : 'inline-block';
 }
 
-function checkAnswer(userAnswer) {
+function checkAnswer(selectedIndex) {
     const currentQuestion = quizData[currentQuestionIndex];
-    if (userAnswer === currentQuestion.correctAnswer) {
-        score++;
-    }
 
+    // Implement answer checking logic if needed
+
+    // Move to the next question
     currentQuestionIndex++;
     if (currentQuestionIndex < quizData.length) {
         loadQuestion();
@@ -100,11 +112,26 @@ function checkAnswer(userAnswer) {
 }
 
 function showResult() {
-    quizContainer.innerHTML = `<h1>Your final score is: ${score}/${quizData.length}</h1>`;
+    quizContainer.innerHTML = `<div id="result-container"><h1>Your final score is: ${currentQuestionIndex}/${quizData.length}</h1></div>`;
 }
 
-nextButton.addEventListener('click', loadQuestion);
+function loadPreviousQuestion() {
+    if (currentQuestionIndex > 0) {
+        currentQuestionIndex--;
+        loadQuestion();
+    }
+}
+
+function loadNextQuestion() {
+    if (currentQuestionIndex < quizData.length - 1) {
+        currentQuestionIndex++;
+        loadQuestion();
+    } else {
+        showResult();
+    }
+}
 
 // Initial question load
 loadQuestion();
+
 
