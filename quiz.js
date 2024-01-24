@@ -69,7 +69,7 @@ const quizContainer = document.getElementById('quiz-container');
 const questionNumberElement = document.getElementById('question-number');
 const questionField = document.getElementById('question-field');
 const questionElement = document.getElementById('question');
-const optionsContainer = document.getElementById('options-container');
+const optionsContainer = document.getElementById('optionsselectedI);
 const backButton = document.getElementById('back-btn');
 const nextButton = document.getElementById('next-btn');
 
@@ -94,9 +94,8 @@ function loadQuestion() {
     backButton.style.display = currentQuestionIndex === 0 ? 'none' : 'inline-block';
 }
 
-function checkAnswer(selectedIndex) {
-    const currentQuestion = quizData[currentQuestionIndex];
 
+function checkAnswer(selectedIndex) {
     // Implement answer checking logic if needed
 
     // Move to the next question
@@ -107,6 +106,8 @@ function checkAnswer(selectedIndex) {
         showResult();
     }
 }
+
+
 
 function showResult() {
     quizContainer.innerHTML = `<div id="result-container"><h1>Your final score is: ${currentQuestionIndex}/${quizData.length}</h1></div>`;
