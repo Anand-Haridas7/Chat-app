@@ -26,24 +26,33 @@
     margin: 10px;
     padding: 10px;
   }
-  
-  /* Style the buttons */
-  .button {
+/* Style the buttons */
+.button {
     border: none; /* no border */
     color: white; /* white text */
-    font-size: 18px; /* medium font size */
-    padding: 10px 20px; /* space around text */
-    margin: 10px; /* space between buttons */
+    font-size: 1.5em; /* medium font size */
+    padding: 1em 2em; /* space around text */
+    margin: 2%; /* space between buttons */
     border-radius: 20px; /* oval shape */
-  }
-  
-  /* Back button style */
-  .back {
+    width: 45%; /* set a maximum width for the buttons */
+}
+
+/* Back button style */
+.back {
     background-color: #007bff; /* blue color */
-  }
-  
-  /* Next button style */
-  .next {
+    margin-right: 2%; /* space on the right side */
+}
+
+/* Next button style */
+.next {
     background-color: #28a745; /* green color */
-  }
-  
+    margin-left: 2%; /* space on the left side */
+}
+
+/* Responsive media query for smaller screens */
+@media only screen and (max-width: 600px) {
+    .button {
+        width: 100%; /* make buttons full width on smaller screens */
+        margin: 2% 0; /* remove horizontal margin and add vertical margin */
+    }
+}
