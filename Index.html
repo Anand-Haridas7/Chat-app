@@ -1,33 +1,37 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-  <link rel="stylesheet" type="text/css" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" type="text/css" href="styles.css">
 </head>
+
 <body>
-  <!-- Create the header -->
-  <div class="header">
-    <p>QUESTION XX</p>
-  </div>
+    <!-- Create the header -->
+    <header>
+        <div id="question-number"></div>  <!-- Your header content goes here -->
+    </header>
 
-  <!-- Create the question box -->
-  <div class="question">
-    <p>QUESTION</p>
-  </div>
+    <!-- Create the quiz container -->
+   
+       
+        <!-- Create the question box -->
+        <div class="question"></div>
 
-  <!-- Create the option boxes -->
-  <div class="option">
-    <p>OPTION 01</p>
-  </div>
-  <div class="option">
-    <p>OPTION 02</p>
-  </div>
-  <div class="option">
-    <p>OPTION 03</p>
-  </div>
+        <!-- Create the option boxes -->
+        <div class="option"></div>
+        <div class="option"></div>
+        <div class="option"></div>
 
-  <!-- Create the buttons -->
-  <div>
-    <button class="button back">BACK</button>
-    <button class="button next">NEXT</button>
-  </div>
+        <!-- Create the buttons -->
+        <div>
+            <button class="button" id="button-back">BACK</button>
+            <button class="button" id="button-next">NEXT</button>
+        </div>
+ <div id="message"></div>
+
+    <script src="quiz.js"></script>
 </body>
+
 </html>
