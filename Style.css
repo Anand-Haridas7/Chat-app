@@ -1,67 +1,71 @@
 /* Style the header */
-.header {
+header {
     background-color: #007bff;
     color: white;
     font-size: 24px;
     padding: 10px;
     text-align: center;
-  }
-  
-  /* Style the question box */
-/* CSS code for question box */
+}
 
-/* CSS code for question box */
-
+/* Style the question box */
 .question {
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
     font-size: 1.5em;
-    margin: 5% 2%; /* Add some margin on all sides */
-    padding: 1.5em; /* Adjust padding for better spacing */
-    max-width: 90%; /* Use percentage for maximum width */
+    margin: 5% 2%;
+    padding: 1.5em;
+    max-width: 90%;
 }
-  
-  /* Style the option boxes */
-  .option {
+
+/* Style the option boxes */
+.option {
     background-color: white;
     border: 2px solid black;
     border-radius: 10px;
     font-size: 18px;
     margin: 10px;
     padding: 10px;
-  }
+}
+
 /* Style the buttons */
 .button {
-    border: none; /* no border */
-    color: white; /* white text */
-    font-size: 1.5em; /* medium font size */
-    padding: 1em 2em; /* space around text */
-    margin: 2%; /* space between buttons */
-    border-radius: 20px; /* oval shape */
-    width: 45%; /* set a maximum width for the buttons */
+    border: none;
+    color: white;
+    font-size: 1.5em;
+    padding: 1em 2em;
+    margin: 2%;
+    border-radius: 20px;
+    width: 45%;
 }
 
 /* Back button style */
-.back {
-    background-color: #007bff; /* blue color */
-    margin-right: 2%; /* space on the right side */
+#button-back {
+    background-color: #007bff;
+    margin-right: 2%;
 }
 
 /* Next button style */
-.next {
-    background-color: #28a745; /* green color */
-    margin-left: 2%; /* space on the left side */
+#button-next {
+    background-color: #28a745;
+    margin-left: 0%;
 }
+#message {
+    font-size: 24px;
+    color: #007bff;
+    text-align: center;
+    margin-top: 50px;
+  }
+  
 
 /* Responsive media query for smaller screens */
 @media only screen and (max-width: 600px) {
     .button {
-        width: 100%; /* make buttons full width on smaller screens */
-        margin: 2% 0; /* remove horizontal margin and add vertical margin */
+        width: 100%;
+        margin: 2% 0;
     }
-    
+
     .question {
-        margin: 5% 2%; /* Adjust margin for smaller screens */
+        margin: 5% 2%;
     }
 }
