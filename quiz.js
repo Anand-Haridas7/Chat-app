@@ -70,18 +70,33 @@ let questions = [
     // Get the user's input from the clicked option container
     let userAnswer = this.innerText;
 
-  // Get the correct answer from the data attribute
-  let correctAnswer = this.dataset.answer;
+    // Get the correct answer from the data attribute
+    let correctAnswer = this.dataset.answer;
 
-  // Compare the user's input with the correct answer
-  if (userAnswer === correctAnswer) {
-    // The user's answer is correct
-    // Increase the score by 1
-    score++;
-    // Display a positive feedback message
-    
-  } 
-  }
+    // Check if the option container has already been clicked
+    if (!this.classList.contains('clicked')) {
+        // Add a 'clicked' class to the option container
+        this.classList.add('clicked');
+
+        // Check the answer and provide feedback
+        provideFeedback(userAnswer, correctAnswer);
+    }
+}
+
+function provideFeedback(userAnswer, correctAnswer) {
+    // Compare the user's input with the correct answer
+    if (userAnswer === correctAnswer) {
+        // The user's answer is correct
+        // Increase the score by 1
+        score++;
+        // Display a positive feedback message
+        displayFeedback("Correct! Well done!");
+    } else {
+        // Display a negative feedback message or perform other actions for incorrect answers
+        displayFeedback("Incorrect. Try again!");
+    }
+}
+  
 
 
   function nextQuestion() {
