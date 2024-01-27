@@ -1,115 +1,122 @@
-const quizData = [
+let questions = [
     {
-        question: 'What is the capital of France?',
-        options: ['Berlin', 'Paris', 'Madrid'],
-        correctAnswer: 'Paris'
+      question: "What is the capital of India?",
+      options: ["Delhi", "Mumbai", "Kolkata", "Chennai"],
+      answer: "Delhi"
     },
     {
-        question: 'What is 2 + 2?',
-        options: ['3', '4', '5'],
-        correctAnswer: '4'
-    }, 
-    {
-        question: 'What is the capital of Japan?',
-        options: ['Tokyo', 'Seoul', 'Beijing'],
-        correctAnswer: 'Tokyo'
+      question: "Who is the author of Harry Potter?",
+      options: ["J.R.R. Tolkien", "George R.R. Martin", "J.K. Rowling", "Stephen King"],
+      answer: "J.K. Rowling"
     },
     {
-        question: 'What is the chemical symbol for gold?',
-        options: ['Au', 'Ag', 'Fe'],
-        correctAnswer: 'Au'
-    },
-    {
-        question: 'What is the square root of 81?',
-        options: ['9', '8', '7'],
-        correctAnswer: '9'
-    },
-    {
-        question: 'In which year did Christopher Columbus reach the Americas?',
-        options: ['1492', '1607', '1776'],
-        correctAnswer: '1492'
-    },
-    {
-        question: 'Who wrote "To Kill a Mockingbird"?',
-        options: ['J.K. Rowling', 'Harper Lee', 'George Orwell'],
-        correctAnswer: 'Harper Lee'
-    },
-    {
-        question: 'Which film won the Academy Award for Best Picture in 2020?',
-        options: ['Parasite', '1917', 'Nomadland'],
-        correctAnswer: 'Parasite'
-    },
-    {
-        question: 'What does the acronym "HTML" stand for?',
-        options: ['HyperText Markup Language', 'High Tech Modern Language', 'Hyperlink and Text Management Language'],
-        correctAnswer: 'HyperText Markup Language'
-    },
-    {
-        question: 'Who is known as the "King of Pop"?',
-        options: ['Elvis Presley', 'Michael Jackson', 'Madonna'],
-        correctAnswer: 'Michael Jackson'
-    },
-    {
-        question: 'In which sport would you perform a slam dunk?',
-        options: ['Tennis', 'Basketball', 'Golf'],
-        correctAnswer: 'Basketball'
-    },
-    {
-        question: 'What is the largest planet in our solar system?',
-        options: ['Venus', 'Jupiter', 'Saturn'],
-        correctAnswer: 'Jupiter'
+      question: "What is the largest animal in the world?",
+      options: ["Elephant", "Whale", "Giraffe", "Dinosaur"],
+      answer: "Whale"
     }
-    // Add more questions as needed
-];
+  ];
+  let questionNumber = document.getElementById("question-number");
+  let questionText = document.querySelector(".question");
+  let optionContainer = document.querySelectorAll(".option");
+  let buttonBack = document.getElementById("button-back");
+  let buttonNext = document.getElementById("button-next");
 
-    // Add more questions as needed
+
+  let currentQuestion = 0;
+  let score = 0;
 
 
 
-
-const quizContainer = document.getElementById('quiz-container');
-const questionElement = document.getElementById('question');
-const optionsContainer = document.getElementById('options-container');
-const nextButton = document.getElementById('next-btn');
-
-let currentQuestionIndex = 0;
-let score = 0;
-
-function loadQuestion() {
-    const currentQuestion = quizData[currentQuestionIndex];
-    questionElement.innerText = currentQuestion.question;
-
-    optionsContainer.innerHTML = '';
-    currentQuestion.options.forEach((option, index) => {
-        const optionButton = document.createElement('button');
-        optionButton.innerText = option;
-        optionButton.addEventListener('click', () => checkAnswer(option));
-        optionsContainer.appendChild(optionButton);
-    });
-}
-
-function checkAnswer(userAnswer) {
-    const currentQuestion = quizData[currentQuestionIndex];
-    if (userAnswer === currentQuestion.correctAnswer) {
-        score++;
+  function loadQuestion() {
+    // Get the current question object from the questions array
+    let question = questions[currentQuestion];
+  
+    // Update the question number and question text
+    questionNumber.innerText = "Question " + (currentQuestion + 1) + " of " + questions.length;
+    questionText.innerText = question.question;
+  
+    // Update the options
+    for (let i = 0; i < optionContainer.length; i++) {
+      // Get the option text from the options array
+      let option = question.options[i];
+  
+      // Assign the option text to the option container
+      optionContainer[i].innerText = option;
+  
+      // Assign the checkAnswer function to the option container
+      optionContainer[i].addEventListener("click", checkAnswer);
+  
+      // Assign the correct answer to the option container
+      optionContainer[i].setAttribute("data-answer", question.answer);
     }
+  }
+  
 
-    currentQuestionIndex++;
-    if (currentQuestionIndex < quizData.length) {
-        loadQuestion();
+
+  window.onload = function() {
+    // Load the first question and options
+    loadQuestion();
+  
+    // Assign the nextQuestion function to the next button
+    buttonNext.addEventListener("click", nextQuestion);
+  
+    // Assign the previousQuestion function to the back button
+    buttonBack.addEventListener("click", previousQuestion);
+  };
+  
+
+
+  function checkAnswer() {
+    // Get the user's input from the clicked option container
+    let userAnswer = this.innerText;
+
+  // Get the correct answer from the data attribute
+  let correctAnswer = this.dataset.answer;
+
+  // Compare the user's input with the correct answer
+  if (userAnswer === correctAnswer) {
+    // The user's answer is correct
+    // Increase the score by 1
+    score++;
+    // Display a positive feedback message
+    
+  } else {
+    // The user's answer is wrong
+    // Display a negative feedback message
+    
+  }
+  }
+
+
+  function nextQuestion() {
+    // Check if there are more questions left
+    if (currentQuestion < questions.length - 1) {
+      // There are more questions left
+      // Increase the current question index by 1
+      currentQuestion++;
+  
+      // Load the next question and options
+      loadQuestion();
     } else {
-        showResult();
+      // There are no more questions left
+      // Display the final score and end the quiz
+      alert("You have completed the quiz. Your score is " + score + " out of " + questions.length + ".");
     }
-}
+  }
+  
 
-function showResult() {
-    quizContainer.innerHTML = `<h1>Your final score is: ${score}/${quizData.length}</h1>`;
-}
-
-nextButton.addEventListener('click', loadQuestion);
-
-// Initial question load
-loadQuestion();
-
-
-
+  function previousQuestion() {
+    // Check if the current question index is greater than 0
+    if (currentQuestion > 0) {
+      // The current question index is greater than 0
+      // Decrease the current question index by 1
+      currentQuestion--;
+  
+      // Load the previous question and options
+      loadQuestion();
+    } else {
+      // The current question index is 0
+      // Do nothing
+    }
+  }
+  
