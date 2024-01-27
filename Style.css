@@ -19,6 +19,7 @@ header {
 }
 
 /* Style the option boxes */
+/* Style the option boxes */
 .option {
     background-color: white;
     border: 2px solid black;
@@ -26,7 +27,15 @@ header {
     font-size: 18px;
     margin: 10px;
     padding: 10px;
+    transition: background-color 0.3s; /* Add transition for smooth effect */
 }
+
+/* Add hover effect */
+.option:active {
+    background-color: #0f0e0e !important; /* Change background color when clicked */
+}
+
+
 
 /* Style the buttons */
 .button {
