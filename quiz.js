@@ -80,11 +80,7 @@ let questions = [
     score++;
     // Display a positive feedback message
     
-  } else {
-    // The user's answer is wrong
-    // Display a negative feedback message
-    
-  }
+  } 
   }
 
 
