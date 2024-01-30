@@ -1,37 +1,30 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" type="text/css" href="style.css">
+    <title>Quiz App</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-    <!-- Create the header -->
     <header>
-        <div id="question-number"></div>  <!-- Your header content goes here -->
+        <div id="question-number"></div>
     </header>
-
-    <!-- Create the quiz container -->
-   
-       
-        <!-- Create the question box -->
+    <div class="container">
         <div class="question"></div>
-
-        <!-- Create the option boxes -->
-        <div class="option"></div>
-        <div class="option"></div>
-        <div class="option"></div>
-
-        <!-- Create the buttons -->
-        <div>
+        <div class="options">
+            <div class="option"></div>
+            <div class="option"></div>
+            <div class="option"></div>
+            <div class="option"></div>
+        </div>
+        <div class="button-container">
             <button class="button" id="button-back">BACK</button>
             <button class="button" id="button-next">NEXT</button>
         </div>
- <div id="message"></div>
-
+        <div id="message"></div>
+        <div id='final-score'style="display: none;">Your final score: <span id="score"></span></div>
+    </div>
     <script src="quiz.js"></script>
 </body>
-
 </html>
