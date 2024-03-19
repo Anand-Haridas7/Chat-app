@@ -78,7 +78,6 @@ header {
 
 
 
-
 /* Positioning the buttons */
 
 /* Final score UI */
@@ -93,54 +92,26 @@ header {
     display: none; /* Hidden by default */
 }
 
+.button-container{
+    display: flex;
+    justify-content: space-between;
+}
+
     /* Styles for desktop screens */
     #button-next {
-        position: relative;
-        left: 100px;
+        
         background-color: #28a745; /* Green color */
-         /* Reset margin */
-        margin: 10px 210px ; /* Adjusted margin */
-        width: 10%; /* Full width */
+      
+       
     }
   
     #button-back {
         background-color: #dc3545; /* Red color */
-     /* Reset margin */
-        margin: 10px 100px; /* Adjusted margin */
-        width: 10%; /* Full width */
-        
+     
     }
 
-    @media only screen and (max-width: 480px) {
-
-
-
-
-        #button-next {
-            position: relative;
-            left: 50px;
-            top:-55px;
-            background-color: #28a745; /* Green color */
-            margin-top: 10px;
-            width: 20%; /* Full width */
-
-        }
-    
-        #button-back {
-            position: relative;
-            right: 75px;
-            background-color: #dc3545; /* Red color */
-            margin-top: 10px;
-             /* Adjusted margin */
-            width: 20%; /* Full width */
-        }
-        .container {
-            min-width: 480px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-    }
     
     
     /* Adjust other styles for desktop as needed */
+
 
