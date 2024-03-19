@@ -82,6 +82,8 @@ function checkAnswer() {
       if (userAnswer === correctAnswer) {
           // Increment the score if the answer is correct
           score++;
+      }else{
+        score;
       }
   }
 }
@@ -157,5 +159,8 @@ window.onload = function () {
 
   // Display final score when the quiz is completed
  
+
+
+
 
 
